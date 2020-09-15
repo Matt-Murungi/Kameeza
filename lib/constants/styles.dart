@@ -8,6 +8,7 @@ const SummaryCardBonusPointsTextStyle = TextStyle(
                           fontSize: 17);
 
  const SummaryCardMoneytextStyle = TextStyle(
-    color: Colors.white,
+    color: Colors.black38,
+    fontWeight: FontWeight.w900,
     fontSize: 17
                         );

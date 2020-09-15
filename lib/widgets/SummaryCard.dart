@@ -11,7 +11,7 @@ class SummaryCard extends StatelessWidget {
     );
 
     return Card(
-      elevation: 4,
+      elevation: 10,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(14),
       ),
@@ -19,7 +19,13 @@ class SummaryCard extends StatelessWidget {
         padding: EdgeInsets.all(20),
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: Color(0xff93B5E1),
+gradient: LinearGradient(colors: [
+  // Color(0xffBE5683),
+  Colors.blue[900],
+        // Color(0xff93B5E1),
+        Colors.white
+
+]),
           borderRadius: BorderRadius.circular(14),
         ),
         child: Column(
@@ -71,7 +77,7 @@ class SummaryCard extends StatelessWidget {
                     Text(
                       "Savings",
                       style: TextStyle(
-                        color: Color(0xff335D2D),
+                        color: Colors.green,
                         fontWeight: FontWeight.bold,
                         fontSize: 17,
                       ),
