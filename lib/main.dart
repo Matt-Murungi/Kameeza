@@ -1,5 +1,5 @@
-import 'package:Kameeza/screens/Home.dart';
-import 'package:Kameeza/screens/auth.dart';
+import 'package:Kameeza/screens/auth/login.dart';
+import 'package:Kameeza/screens/auth/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,7 +21,7 @@ primaryIconTheme: IconThemeData(color: Color(0xffBE5683)),
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: Auth());
+        home: SignUp());
   }
 }
 

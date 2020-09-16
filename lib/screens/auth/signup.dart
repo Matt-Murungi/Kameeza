@@ -1,7 +1,7 @@
 import 'package:Kameeza/widgets/AuthFormField.dart';
 import 'package:flutter/material.dart';
 
-class Auth extends StatelessWidget {
+class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,7 @@ class Auth extends StatelessWidget {
             SizedBox(height: 30),
             Center(
               child: Text(
-                "Welcome Back",
+                "Create Account",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.black45,
@@ -43,6 +43,11 @@ class Auth extends StatelessWidget {
               hint: "eg apio@example.com",
               isObsure: true,
             ),
+                 AuthFormField(
+              label: "Confirm Password",
+              hint: "eg apio@example.com",
+              isObsure: true,
+            ),
             SizedBox(
               height: 20,
             ),
@@ -52,7 +57,7 @@ class Auth extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Sign In",
+                    "Register",
                     style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w700,
@@ -76,8 +81,8 @@ class Auth extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Forgot Password"),
-                  Text("Sign Up"),
+                  Text("I have an Account"),
+                  Text("Sign In"),
                 ],
               ),
             ),
