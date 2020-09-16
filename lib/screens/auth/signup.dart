@@ -1,5 +1,8 @@
 import 'package:Kameeza/widgets/AuthFormField.dart';
+import 'package:Kameeza/widgets/auth/AuthIconButton.dart';
 import 'package:flutter/material.dart';
+
+import '../Home.dart';
 
 class SignUp extends StatelessWidget {
   @override
@@ -63,12 +66,8 @@ class SignUp extends StatelessWidget {
                         fontWeight: FontWeight.w700,
                         color: Colors.black45),
                   ),
-                  CircleAvatar(
-                    backgroundColor: Colors.black38,
-                    child: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.white,
-                    ),
+                  AuthIconButton(
+                    function: ()=>Navigator.pushNamed(context, Home.route),
                   ),
                 ],
               ),
@@ -95,3 +94,7 @@ class SignUp extends StatelessWidget {
     );
   }
 }
+
+
+
+

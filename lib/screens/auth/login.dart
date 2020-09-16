@@ -2,6 +2,7 @@ import 'package:Kameeza/widgets/AuthFormField.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
+  static const route = 'Login';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

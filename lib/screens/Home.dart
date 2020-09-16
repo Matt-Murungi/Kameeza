@@ -6,9 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 class Home extends StatelessWidget {
+    static const route = 'Home';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+    
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -19,7 +23,9 @@ class Home extends StatelessWidget {
           ),
         ],
       ),
+
       drawer: DrawerWidget(),
+
       body: Container(
         margin: EdgeInsets.only(
           left: 5,
@@ -37,6 +43,7 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
+
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 1,
         selectedItemColor: Color(0xffBE5683),
