@@ -1,3 +1,4 @@
+import 'package:Kameeza/screens/home_options/Deposit.dart';
 import 'package:Kameeza/screens/home_options/SaveBuddy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -14,12 +15,13 @@ class HomeOptions extends StatelessWidget {
           HomeIconButton(
             label: "Save Buddy",
             icon: SimpleLineIcons.people,
-            function: ()=> Navigator.pushNamed(context, SaveBuddy.route ),
+            function: () => Navigator.pushNamed(context, SaveBuddy.route),
           ),
           HomeIconButton(
-            label: "Deposit ",
-            icon: SimpleLineIcons.wallet,
-          ),
+              label: "Deposit ",
+              icon: SimpleLineIcons.wallet,
+              function: () =>
+                  Navigator.pushNamed(context, DepositScreen.route)),
           HomeIconButton(
             label: "Insurance",
             icon: FontAwesome.handshake_o,

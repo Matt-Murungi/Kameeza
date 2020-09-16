@@ -1,3 +1,6 @@
+import 'package:Kameeza/screens/home_options/response.dart';
+import 'package:Kameeza/widgets/ActionButton.dart';
+import 'package:Kameeza/widgets/ImageContainer.dart';
 import 'package:flutter/material.dart';
 import 'package:contact_picker/contact_picker.dart';
 
@@ -15,11 +18,15 @@ class _SaveBuddyState extends State<SaveBuddy> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: new Center(
         child: new Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
+            Expanded(
+                child: ImageContainer(
+              imageurl: 'assets/images/img2.png',
+            )),
+            SizedBox(height: 40,),
             ListTile(
               title: TextField(
                 keyboardType: TextInputType.number,
@@ -52,17 +59,17 @@ class _SaveBuddyState extends State<SaveBuddy> {
             new Text(
               _contact == null ? 'No contact selected.' : _contact.toString(),
             ),
-
-            MaterialButton(
-                color: Colors.blue,
-                child: new Text("Send Invite"),
-                onPressed: () async {
-                  Contact contact = await _contactPicker.selectContact();
-                  setState(() {
-                    _contact = contact;
-                  });
-                },
-              ),
+            SizedBox(
+              height: 20,
+            ),
+            ActionButton(
+              label: "Send Invite",
+              function: () =>
+                  Navigator.pushNamed(context, ResponseScreen.route),
+            ),
+                   SizedBox(
+            height: 100,
+          ),
           ],
         ),
       ),
