@@ -4,29 +4,51 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class Deposit with ChangeNotifier {
-  var dio = Dio();
+  bool loading = false;
+
+  void setLoading(value) {
+    loading = value;
+    notifyListeners();
+  }
+
+  bool isLoading() {
+    return loading;
+  }
+
   final url = "http://kameeza.hipipo.mojaloop-hackathon.io:4301/transfers";
   Map<String, String> _headers = {'Content-Type': 'application/json'};
-  Future postDeposit(Map data) async {
-    Map encodedData = {...data};
-    // http.Response response = await http.post(url,
-    //     headers: _headers,
-    //     body: encodedData,
-    //     encoding: Encoding.getByName("utf-8"));
+  Future postDeposit(String receiver, String amount) async {
+    setLoading(true);
 
-    Response response = await dio.post(
-      url,
-    options: Options(
-      headers: _headers
-    ),
-    data: json.encode(encodedData)
-    );
+    Map data = {
+      "from": {
+        "displayName": receiver,
+        "idType": "MSISDN",
+        "idValue": "260555555555"
+      },
+      "to": {"idType": "MSISDN", "idValue": "610298765432"},
+      "amountType": "SEND",
+      "currency": "ZMW",
+      "amount": amount,
+      "transactionType": "TRANSFER",
+      "initiatorType": "CONSUMER",
+      "note": "test payment",
+      "homeTransactionId": "{{guid}}"
+    };
 
-    var body = json.decode(response.data);
+    http.Response response = await http.post(url,
+        headers: _headers,
+        body: json.encode(data),
+        encoding: Encoding.getByName("utf-8"));
 
-    if (response.statusCode == 200 || response.statusCode == 201) {
-      print("yey");
+    var body = json.decode(response.body);
+
+    if (response != null) {
+      setLoading(false);
+
+      print(response.statusCode);
     } else {
+      setLoading(true);
       print(response.statusCode);
     }
 

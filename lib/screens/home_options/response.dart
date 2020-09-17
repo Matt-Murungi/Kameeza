@@ -10,7 +10,7 @@ class ResponseScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("A notification has been sent to your Safe Buddy", style: TextStyle(fontSize: 18),),
+          Text("A notification has been sent to your Save Buddy", style: TextStyle(fontSize: 18),),
           SizedBox(height:10),
           ActionButton(label: "OK", function: () => Navigator.pushNamed(context, Home.route),)
 
